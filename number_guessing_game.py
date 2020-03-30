@@ -11,10 +11,10 @@ def start_game():
     print("Welcome to the Number Guessing Game!")
     print("------------------------------------\n")
 
-    print(random_value)
     counter = 0
     condition = True
     while condition:
+        print(random_value)
         try:
             user_input = int(input("Pick a number between 1 and 10: "))
         except ValueError:
@@ -38,6 +38,7 @@ def start_game():
                 elif play_again == 'y':
                     print("\nThe highscore is {}".format(counter))
                     counter = 0
+                    random_value = generate_random_value(1, 10)
                     break
                 else:
                     print("Oh no! Something went wrong, please try again!\n")
